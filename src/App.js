@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import Header from './components/Header/Header';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core';
 import './App.css';
+import Footer from './components/Footer/Footer';
+import Body from './components/Body/Body';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: '"Poppins", sans-serif'
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div style={{height: '100%'}}>
+        <Header />
+        <Body />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
